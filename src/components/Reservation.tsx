@@ -46,28 +46,7 @@ export default function Reservation() {
               </p>
             </div>
 
-            <hr className="my-8 border-beige" />
 
-            {/* Contact */}
-            <div className="text-center">
-              <p className="text-sm text-charcoal/50">예약 문의</p>
-              <a
-                href="tel:010-8160-7196"
-                className="mt-1 block text-2xl font-bold text-charcoal"
-              >
-                010-8160-7196
-              </a>
-              <p className="mt-1 text-sm text-charcoal/50">전화 / 문자</p>
-            </div>
-
-            <div className="mt-8 text-center">
-              <a
-                href="tel:010-8160-7196"
-                className="inline-block rounded-full bg-sage px-10 py-4 text-sm font-semibold tracking-wide text-white transition-colors hover:bg-sage-dark"
-              >
-                전화로 예약하기
-              </a>
-            </div>
           </div>
         </FadeIn>
       </div>
