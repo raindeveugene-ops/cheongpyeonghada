@@ -1,4 +1,5 @@
 import FadeIn from "./FadeIn";
+import ReservationForm from "./ReservationForm";
 import type { Translations } from "@/i18n";
 
 export default function Reservation({ t }: { t: Translations }) {
@@ -30,15 +31,8 @@ export default function Reservation({ t }: { t: Translations }) {
 
             <hr className="my-8 border-beige" />
 
-            {/* BBQ info */}
-            <div className="text-center">
-              <h3 className="text-lg font-bold text-charcoal">
-                {t.reservation.bbqTitle}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-charcoal/70">
-                {t.reservation.bbqDescription}
-              </p>
-            </div>
+            {/* Reservation Form */}
+            <ReservationForm t={t} />
           </div>
         </FadeIn>
       </div>

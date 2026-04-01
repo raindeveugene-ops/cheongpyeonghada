@@ -63,7 +63,27 @@
       { "label": "Max Guests", "value": "6" }
     ],
     "bbqTitle": "🔥 Barbecue Service",
-    "bbqDescription": "₩50,000 supplement — oak-fired, personally prepared by the host"
+    "bbqDescription": "₩50,000 supplement — oak-fired, personally prepared by the host",
+    "form": {
+      "heading": "Reservation Inquiry",
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "phone": "Phone",
+      "phonePlaceholder": "010-0000-0000",
+      "phoneError": "Please enter a valid phone number (010-XXXX-XXXX)",
+      "checkIn": "Check-in Date",
+      "checkOut": "Check-out Date",
+      "checkOutError": "Check-out must be after check-in",
+      "guests": "Guests",
+      "guestsUnit": "",
+      "bbq": "Add BBQ (₩50,000)",
+      "message": "Message",
+      "messagePlaceholder": "Any special requests or questions",
+      "submit": "Submit Inquiry",
+      "submitting": "Submitting...",
+      "success": "Your reservation inquiry has been submitted. We will contact you shortly.",
+      "error": "Submission failed. Please try again later."
+    }
   },
   "location": {
     "label": "Directions",

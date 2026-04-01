@@ -63,7 +63,27 @@
       { "label": "최대 인원", "value": "6인" }
     ],
     "bbqTitle": "🔥 바비큐 이용",
-    "bbqDescription": "별도 5만원 (참나무 장작, 사장님 직접 조리)"
+    "bbqDescription": "별도 5만원 (참나무 장작, 사장님 직접 조리)",
+    "form": {
+      "heading": "예약 문의",
+      "name": "이름",
+      "namePlaceholder": "홍길동",
+      "phone": "연락처",
+      "phonePlaceholder": "010-0000-0000",
+      "phoneError": "올바른 전화번호 형식을 입력해주세요 (010-XXXX-XXXX)",
+      "checkIn": "체크인 날짜",
+      "checkOut": "체크아웃 날짜",
+      "checkOutError": "체크아웃은 체크인 이후여야 합니다",
+      "guests": "인원",
+      "guestsUnit": "명",
+      "bbq": "바비큐 추가 (50,000원)",
+      "message": "문의사항",
+      "messagePlaceholder": "추가 요청사항을 적어주세요",
+      "submit": "예약 문의하기",
+      "submitting": "전송 중...",
+      "success": "예약 문의가 접수되었습니다. 빠른 시일 내에 연락드리겠습니다.",
+      "error": "전송에 실패했습니다. 잠시 후 다시 시도해주세요."
+    }
   },
   "location": {
     "label": "오시는길",
