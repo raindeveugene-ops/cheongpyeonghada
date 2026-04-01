@@ -1,23 +1,34 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import type { Translations, Locale } from "@/i18n";
 
-const NAV_ITEMS = [
-  { label: "소개", href: "#about" },
-  { label: "시설안내", href: "#features" },
-  { label: "예약안내", href: "#reservation" },
-  { label: "오시는길", href: "#location" },
-];
-
-export default function Navigation() {
+export default function Navigation({
+  locale,
+  t,
+}: {
+  locale: Locale;
+  t: Translations;
+}) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    document.documentElement.lang = locale;
+  }, [locale]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const navItems = [
+    { label: t.nav.about, href: "#about" },
+    { label: t.nav.features, href: "#features" },
+    { label: t.nav.reservation, href: "#reservation" },
+    { label: t.nav.location, href: "#location" },
+  ];
 
   return (
     <nav
@@ -35,30 +46,62 @@ export default function Navigation() {
               scrolled ? "text-charcoal" : "text-white"
             }`}
           >
-            청평하다
+            {t.footer.brand}
           </a>
 
           {/* Desktop nav */}
-          <ul className="hidden gap-8 md:flex">
-            {NAV_ITEMS.map((item) => (
-              <li key={item.href}>
-                <a
-                  href={item.href}
-                  className={`text-sm font-medium tracking-wide transition-colors hover:text-gold ${
-                    scrolled ? "text-charcoal" : "text-white"
-                  }`}
-                >
-                  {item.label}
-                </a>
-              </li>
+          <div className="hidden items-center gap-8 md:flex">
+            {navItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className={`text-sm font-medium tracking-wide transition-colors hover:text-gold ${
+                  scrolled ? "text-charcoal" : "text-white"
+                }`}
+              >
+                {item.label}
+              </a>
             ))}
-          </ul>
+
+            {/* Language toggle */}
+            <div
+              className={`flex items-center gap-1.5 text-sm font-medium ${
+                scrolled ? "text-charcoal/40" : "text-white/40"
+              }`}
+            >
+              <a
+                href="/ko/"
+                className={`transition-colors ${
+                  locale === "ko"
+                    ? "text-gold"
+                    : scrolled
+                      ? "text-charcoal/60 hover:text-charcoal"
+                      : "text-white/60 hover:text-white"
+                }`}
+              >
+                KO
+              </a>
+              <span>|</span>
+              <a
+                href="/en/"
+                className={`transition-colors ${
+                  locale === "en"
+                    ? "text-gold"
+                    : scrolled
+                      ? "text-charcoal/60 hover:text-charcoal"
+                      : "text-white/60 hover:text-white"
+                }`}
+              >
+                EN
+              </a>
+            </div>
+          </div>
 
           {/* Mobile hamburger */}
           <button
             className="md:hidden p-2"
             onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="메뉴 열기"
+            aria-label="Menu"
           >
             <div className="space-y-1.5">
               {[0, 1, 2].map((i) => (
@@ -78,7 +121,7 @@ export default function Navigation() {
       {menuOpen && (
         <div className="bg-white shadow-lg md:hidden">
           <ul className="space-y-1 px-6 py-4">
-            {NAV_ITEMS.map((item) => (
+            {navItems.map((item) => (
               <li key={item.href}>
                 <a
                   href={item.href}
@@ -89,6 +132,29 @@ export default function Navigation() {
                 </a>
               </li>
             ))}
+            <li className="flex items-center gap-2 py-2 text-sm font-medium">
+              <a
+                href="/ko/"
+                className={
+                  locale === "ko"
+                    ? "text-gold"
+                    : "text-charcoal/50 hover:text-charcoal"
+                }
+              >
+                KO
+              </a>
+              <span className="text-charcoal/30">|</span>
+              <a
+                href="/en/"
+                className={
+                  locale === "en"
+                    ? "text-gold"
+                    : "text-charcoal/50 hover:text-charcoal"
+                }
+              >
+                EN
+              </a>
+            </li>
           </ul>
         </div>
       )}

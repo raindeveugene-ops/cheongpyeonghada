@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "title": "Cheongpyeonghada | Private Retreat in Gapyeong",
+    "description": "Tranquility on 2,000㎡ along the Bukhan River. An exclusive private retreat in Cheongpyeong, Gapyeong."
+  },
+  "nav": {
+    "about": "About",
+    "features": "Amenities",
+    "reservation": "Reservations",
+    "location": "Directions"
+  },
+  "hero": {
+    "title": "Tranquility on 2,000㎡ along the Bukhan River",
+    "subtitle": "An exclusive private retreat in Cheongpyeong, Gapyeong",
+    "cta": "Inquire & Reserve",
+    "imageAlt": "Exterior view of Cheongpyeonghada with mountain backdrop"
+  },
+  "about": {
+    "label": "About",
+    "title": "A Complete Rest in Nature",
+    "description": "Perched on a sprawling 2,000㎡ estate overlooking the Bukhan River, Cheongpyeonghada is a singular private retreat. Surrender the noise of everyday life amid lush lawns and tranquil riverside vistas.",
+    "imageAlt": "Living room interior with vaulted ceiling and wood-burning fireplace",
+    "stats": [
+      { "label": "Estate", "value": "2,000㎡" },
+      { "label": "Interior", "value": "165㎡" },
+      { "label": "Capacity", "value": "6 guests" }
+    ]
+  },
+  "features": {
+    "label": "Amenities",
+    "title": "A Distinctive Space",
+    "items": [
+      { "emoji": "🏡", "title": "Complete Privacy", "description": "One booking at a time — the entire estate is yours alone" },
+      { "emoji": "🌿", "title": "Expansive Lawn", "description": "A verdant garden sprawling across the 2,000㎡ estate" },
+      { "emoji": "🏞️", "title": "River Panorama", "description": "Four seasons of the Bukhan River, framed by your living room" },
+      { "emoji": "🔥", "title": "Oak-fired Barbecue", "description": "A personally hosted oak-wood barbecue experience" }
+    ]
+  },
+  "gallery": {
+    "label": "Gallery",
+    "title": "Scenes of Cheongpyeonghada",
+    "close": "Close",
+    "prev": "Previous",
+    "next": "Next",
+    "items": [
+      { "alt": "Garden bathed in sunset light" },
+      { "alt": "Lawn terrace with parasol" },
+      { "alt": "Riverside barbecue area" },
+      { "alt": "Pristine bedroom with two king-size beds" },
+      { "alt": "Artfully arranged breakfast setting" },
+      { "alt": "Turntable and vinyl record collection" },
+      { "alt": "Retro VHS display under warm lighting" },
+      { "alt": "Interior hallway with bath and bedroom views" }
+    ]
+  },
+  "reservation": {
+    "label": "Reservations",
+    "title": "Reservation Details",
+    "items": [
+      { "label": "Check-in", "value": "15:00" },
+      { "label": "Check-out", "value": "11:00" },
+      { "label": "Base Guests", "value": "2" },
+      { "label": "Max Guests", "value": "6" }
+    ],
+    "bbqTitle": "🔥 Barbecue Service",
+    "bbqDescription": "₩50,000 supplement — oak-fired, personally prepared by the host"
+  },
+  "location": {
+    "label": "Directions",
+    "title": "Getting Here",
+    "address": "2209 Bukhangang-ro, Cheongpyeong-myeon, Gapyeong-gun, Gyeonggi-do",
+    "mapPlaceholder": "Map area (Kakao Map / Naver Map embed)",
+    "transportTitle": "Transportation",
+    "car": {
+      "label": "🚗 By Car",
+      "line1": "Approx. 50 min from Seoul",
+      "line2": "Gyeongchun Expressway → Cheongpyeong IC → Bukhangang-ro"
+    },
+    "public": {
+      "label": "🚆 Public Transit",
+      "line1": "Gyeongchun Line to Cheongpyeong Station",
+      "line2": "Approx. 10 min by taxi"
+    },
+    "mapLink": "View on Kakao Map"
+  },
+  "footer": {
+    "brand": "Cheongpyeonghada",
+    "address": "2209 Bukhangang-ro, Cheongpyeong-myeon, Gapyeong-gun, Gyeonggi-do",
+    "copyright": "© 2026 Cheongpyeonghada. All rights reserved."
+  },
+  "backToTop": "Back to top"
+}

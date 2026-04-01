@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "title": "청평하다 | 가평 독채 펜션",
+    "description": "북한강이 흐르는 600평의 고요. 가평 청평, 단 하나의 독채 스테이."
+  },
+  "nav": {
+    "about": "소개",
+    "features": "시설안내",
+    "reservation": "예약안내",
+    "location": "오시는길"
+  },
+  "hero": {
+    "title": "북한강이 흐르는 600평의 고요",
+    "subtitle": "가평 청평, 단 하나의 독채 스테이",
+    "cta": "예약 문의하기",
+    "imageAlt": "산을 배경으로 한 청평하다 독채 외관"
+  },
+  "about": {
+    "label": "소개",
+    "title": "자연 속, 온전한 쉼",
+    "description": "약 600평 대지 위, 북한강을 바라보는 단 하나의 독채. 넓은 잔디 앞마당과 고요한 강변 풍경이 어우러진 청평하다에서 일상의 소음을 내려놓으세요.",
+    "imageAlt": "높은 천장과 장작 난로가 있는 거실 인테리어",
+    "stats": [
+      { "label": "대지", "value": "600평" },
+      { "label": "실내", "value": "50평" },
+      { "label": "최대", "value": "6인" }
+    ]
+  },
+  "features": {
+    "label": "시설안내",
+    "title": "특별한 공간",
+    "items": [
+      { "emoji": "🏡", "title": "독채 프라이버시", "description": "단 하나의 예약, 오롯이 당신만의 공간" },
+      { "emoji": "🌿", "title": "잔디 앞마당", "description": "600평 대지 위 푸른 잔디밭에서의 여유" },
+      { "emoji": "🏞️", "title": "북한강 뷰", "description": "거실에서 바라보는 북한강의 사계" },
+      { "emoji": "🔥", "title": "참나무 장작 바비큐", "description": "사장님이 직접 구워주는 참나무 장작 바비큐" }
+    ]
+  },
+  "gallery": {
+    "label": "갤러리",
+    "title": "청평하다의 풍경",
+    "close": "닫기",
+    "prev": "이전",
+    "next": "다음",
+    "items": [
+      { "alt": "석양이 물드는 정원 풍경" },
+      { "alt": "파라솔이 있는 잔디 마당" },
+      { "alt": "강변이 보이는 바베큐 공간" },
+      { "alt": "킹사이즈 침대 두 개가 있는 깔끔한 침실" },
+      { "alt": "아름다운 조식 세팅" },
+      { "alt": "턴테이블과 LP 레코드" },
+      { "alt": "따뜻한 조명 아래 레트로 VHS 진열" },
+      { "alt": "욕실과 침실이 보이는 내부 복도" }
+    ]
+  },
+  "reservation": {
+    "label": "예약안내",
+    "title": "예약 안내",
+    "items": [
+      { "label": "체크인", "value": "15:00" },
+      { "label": "체크아웃", "value": "11:00" },
+      { "label": "기준 인원", "value": "2인" },
+      { "label": "최대 인원", "value": "6인" }
+    ],
+    "bbqTitle": "🔥 바비큐 이용",
+    "bbqDescription": "별도 5만원 (참나무 장작, 사장님 직접 조리)"
+  },
+  "location": {
+    "label": "오시는길",
+    "title": "찾아오시는 길",
+    "address": "경기 가평군 청평면 북한강로 2209",
+    "mapPlaceholder": "지도 영역 (카카오맵/네이버맵 임베드)",
+    "transportTitle": "교통 안내",
+    "car": {
+      "label": "🚗 자가용",
+      "line1": "서울 기준 약 50분 소요",
+      "line2": "경춘고속도로 → 청평IC → 북한강로"
+    },
+    "public": {
+      "label": "🚆 대중교통",
+      "line1": "경춘선 청평역 하차",
+      "line2": "택시 약 10분 소요"
+    },
+    "mapLink": "카카오맵에서 보기"
+  },
+  "footer": {
+    "brand": "청평하다",
+    "address": "경기 가평군 청평면 북한강로 2209",
+    "copyright": "© 2026 청평하다. All rights reserved."
+  },
+  "backToTop": "맨 위로"
+}

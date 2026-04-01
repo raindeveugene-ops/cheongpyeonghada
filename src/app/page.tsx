@@ -1,25 +1,15 @@
-import Navigation from "@/components/Navigation";
-import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Features from "@/components/Features";
-import Gallery from "@/components/Gallery";
-import Reservation from "@/components/Reservation";
-import Location from "@/components/Location";
-import Footer from "@/components/Footer";
+"use client";
 
-export default function Home() {
+import { useEffect } from "react";
+
+export default function RootPage() {
+  useEffect(() => {
+    window.location.replace("/ko/");
+  }, []);
+
   return (
-    <>
-      <Navigation />
-      <main>
-        <Hero />
-        <About />
-        <Features />
-        <Gallery />
-        <Reservation />
-        <Location />
-      </main>
-      <Footer />
-    </>
+    <div className="flex min-h-screen items-center justify-center">
+      <p className="text-charcoal/50">Redirecting…</p>
+    </div>
   );
 }

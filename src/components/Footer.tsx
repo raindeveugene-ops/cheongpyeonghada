@@ -1,17 +1,17 @@
-export default function Footer() {
+import type { Translations } from "@/i18n";
+
+export default function Footer({ t }: { t: Translations }) {
   return (
     <footer className="bg-charcoal py-12">
       <div className="mx-auto max-w-7xl px-6 text-center lg:px-8">
         <p className="font-serif text-xl font-bold tracking-wide text-white">
-          청평하다
+          {t.footer.brand}
         </p>
         <p className="mt-3 text-sm leading-relaxed text-white/50">
-          경기 가평군 청평면 북한강로 2209
+          {t.footer.address}
         </p>
 
-        <p className="mt-6 text-xs text-white/30">
-          © 2026 청평하다. All rights reserved.
-        </p>
+        <p className="mt-6 text-xs text-white/30">{t.footer.copyright}</p>
       </div>
     </footer>
   );

@@ -1,11 +1,4 @@
-import type { Metadata } from "next";
 import "./globals.css";
-
-export const metadata: Metadata = {
-  title: "청평하다 | 가평 독채 펜션",
-  description:
-    "북한강이 흐르는 600평의 고요. 가평 청평, 단 하나의 독채 스테이.",
-};
 
 export default function RootLayout({
   children,
@@ -13,7 +6,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko" className="h-full antialiased">
+    <html className="h-full antialiased">
       <head>
         <link
           rel="stylesheet"

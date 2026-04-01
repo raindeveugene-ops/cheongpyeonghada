@@ -1,19 +1,20 @@
 import FadeIn from "./FadeIn";
+import type { Translations } from "@/i18n";
 
-export default function Location() {
+export default function Location({ t }: { t: Translations }) {
   return (
     <section id="location" className="bg-cream py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <FadeIn>
           <div className="text-center">
             <p className="text-sm font-semibold tracking-widest text-gold uppercase">
-              오시는길
+              {t.location.label}
             </p>
             <h2 className="mt-3 font-serif text-3xl font-bold text-charcoal lg:text-4xl">
-              찾아오시는 길
+              {t.location.title}
             </h2>
             <p className="mt-4 text-base text-charcoal/70">
-              경기 가평군 청평면 북한강로 2209
+              {t.location.address}
             </p>
           </div>
         </FadeIn>
@@ -26,7 +27,7 @@ export default function Location() {
                 <div className="text-center">
                   <p className="text-4xl">📍</p>
                   <p className="mt-2 text-sm text-charcoal/50">
-                    지도 영역 (카카오맵/네이버맵 임베드)
+                    {t.location.mapPlaceholder}
                   </p>
                 </div>
               </div>
@@ -34,22 +35,28 @@ export default function Location() {
 
             {/* Directions */}
             <div className="flex flex-col justify-center rounded-2xl bg-white p-8 shadow-sm">
-              <h3 className="text-lg font-bold text-charcoal">교통 안내</h3>
+              <h3 className="text-lg font-bold text-charcoal">
+                {t.location.transportTitle}
+              </h3>
               <ul className="mt-4 space-y-4 text-sm leading-relaxed text-charcoal/70">
                 <li>
-                  <p className="font-semibold text-charcoal">🚗 자가용</p>
+                  <p className="font-semibold text-charcoal">
+                    {t.location.car.label}
+                  </p>
                   <p className="mt-1">
-                    서울 기준 약 50분 소요
+                    {t.location.car.line1}
                     <br />
-                    경춘고속도로 → 청평IC → 북한강로
+                    {t.location.car.line2}
                   </p>
                 </li>
                 <li>
-                  <p className="font-semibold text-charcoal">🚆 대중교통</p>
+                  <p className="font-semibold text-charcoal">
+                    {t.location.public.label}
+                  </p>
                   <p className="mt-1">
-                    경춘선 청평역 하차
+                    {t.location.public.line1}
                     <br />
-                    택시 약 10분 소요
+                    {t.location.public.line2}
                   </p>
                 </li>
               </ul>
@@ -60,7 +67,7 @@ export default function Location() {
                 rel="noopener noreferrer"
                 className="mt-6 inline-block rounded-full border border-sage px-6 py-3 text-center text-sm font-semibold text-sage transition-colors hover:bg-sage hover:text-white"
               >
-                카카오맵에서 보기
+                {t.location.mapLink}
               </a>
             </div>
           </div>
