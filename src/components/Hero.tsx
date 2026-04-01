@@ -1,8 +1,12 @@
 export default function Hero() {
   return (
     <section className="relative flex min-h-screen items-center justify-center">
-      {/* Placeholder background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-sage-dark via-charcoal to-charcoal" />
+      {/* Background image */}
+      <img
+        src="/images/exterior.jpg"
+        alt="산을 배경으로 한 청평하다 독채 외관"
+        className="absolute inset-0 h-full w-full object-cover"
+      />
       <div className="absolute inset-0 bg-black/40" />
 
       <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">

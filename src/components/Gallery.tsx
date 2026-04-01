@@ -1,14 +1,15 @@
+import Image from "next/image";
 import FadeIn from "./FadeIn";
 
 const GALLERY_ITEMS = [
-  { gradient: "from-sage/40 to-sage-dark/30", span: "col-span-2 row-span-2" },
-  { gradient: "from-beige to-gold/20", span: "" },
-  { gradient: "from-gold/30 to-beige", span: "" },
-  { gradient: "from-sage-dark/20 to-charcoal/10", span: "" },
-  { gradient: "from-charcoal/10 to-sage/20", span: "" },
-  { gradient: "from-gold/20 to-sage/30", span: "col-span-2" },
-  { gradient: "from-beige to-sage/20", span: "" },
-  { gradient: "from-sage/30 to-gold/20", span: "" },
+  { src: "/images/garden-sunset.jpg", alt: "석양이 물드는 정원 풍경", span: "col-span-2 row-span-2" },
+  { src: "/images/garden-parasol.jpg", alt: "파라솔이 있는 잔디 마당", span: "" },
+  { src: "/images/bbq-river.jpg", alt: "강변이 보이는 바베큐 공간", span: "" },
+  { src: "/images/bedroom.jpg", alt: "킹사이즈 침대 두 개가 있는 깔끔한 침실", span: "" },
+  { src: "/images/breakfast.jpg", alt: "아름다운 조식 세팅", span: "" },
+  { src: "/images/turntable.jpg", alt: "턴테이블과 LP 레코드", span: "col-span-2" },
+  { src: "/images/vhs-display.jpg", alt: "따뜻한 조명 아래 레트로 VHS 진열", span: "" },
+  { src: "/images/interior-hallway.jpg", alt: "욕실과 침실이 보이는 내부 복도", span: "" },
 ];
 
 export default function Gallery() {
@@ -31,8 +32,15 @@ export default function Gallery() {
             {GALLERY_ITEMS.map((item, i) => (
               <div
                 key={i}
-                className={`overflow-hidden rounded-xl bg-gradient-to-br ${item.gradient} ${item.span} transition-transform hover:scale-[1.02]`}
-              />
+                className={`relative overflow-hidden rounded-xl ${item.span} transition-transform hover:scale-[1.02]`}
+              >
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  fill
+                  className="object-cover"
+                />
+              </div>
             ))}
           </div>
         </FadeIn>

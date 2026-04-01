@@ -1,3 +1,4 @@
+import Image from "next/image";
 import FadeIn from "./FadeIn";
 
 const STATS = [
@@ -41,8 +42,15 @@ export default function About() {
               </div>
             </div>
 
-            {/* Image placeholder */}
-            <div className="aspect-[4/3] overflow-hidden rounded-2xl bg-gradient-to-br from-sage/30 via-beige to-gold/20" />
+            {/* Image */}
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+              <Image
+                src="/images/living-fireplace.jpg"
+                alt="높은 천장과 장작 난로가 있는 거실 인테리어"
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
         </FadeIn>
       </div>
