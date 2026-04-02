@@ -36,6 +36,65 @@
       { "emoji": "🔥", "title": "Oak-fired Barbecue", "description": "A personally hosted oak-wood barbecue experience" }
     ]
   },
+  "accommodation": {
+    "label": "Details",
+    "title": "Accommodation Guide",
+    "about": "[Cheongpyeonghada] derives from the Korean words meaning integrity and fairness — the very etymology of the Cheongpyeong region. We remain steadfast in running this space with honesty and care, crafting a clear and peaceful sanctuary. Let us comfort your weary days like a deep, restful sleep.",
+    "roomLayout": {
+      "title": "Room Layout (Duplex)",
+      "items": [
+        { "emoji": "🛋️", "label": "Living Room", "desc": "Sofa, dining table, chairs, A/C, turntable, fireplace (decorative only)" },
+        { "emoji": "🛏️", "label": "Bedroom", "desc": "2 king beds, A/C, TV, storage" },
+        { "emoji": "🏠", "label": "2nd Floor", "desc": "Tea table, A/C, extra bedding provided for additional guests" },
+        { "emoji": "🍳", "label": "Kitchen", "desc": "Toaster, electric kettle, frying pan, pot, plates, refrigerator, microwave, induction stove, cutlery, wine glasses, mugs" },
+        { "emoji": "🚿", "label": "Bathroom", "desc": "Hand wash, shampoo, conditioner, body wash" }
+      ]
+    },
+    "amenities": {
+      "title": "Amenities & Facilities",
+      "items": ["📶 Wi-Fi", "🍳 In-room Cooking", "📺 TV", "🧴 Toiletries", "🅿️ Free Parking", "❄️ A/C", "🚿 Shower", "🚭 Non-smoking", "🛁 Bathtub", "💨 Hair Dryer"]
+    },
+    "rules": {
+      "title": "House Rules",
+      "items": [
+        "Security deposit: ₩100,000 (refunded within 12 hours if no issues)",
+        "Extra guest: ₩30,000 per person / Free for infants under 12 months",
+        "Extra bedding: ₩20,000 (1 set for 2 persons)",
+        "Check-in must be completed by 8:00 PM",
+        "Strictly no exceeding reserved guests or unregistered visitors (eviction without refund)",
+        "No parties, loud music, or excessive noise after 10:00 PM",
+        "Smoking outside designated areas: ₩100,000 fine + eviction (includes e-cigarettes)",
+        "No pets allowed",
+        "Wash dishes after use, separate recyclables",
+        "No balloons or adhesives on wallpaper (repair costs apply)"
+      ]
+    },
+    "bbq": {
+      "title": "Barbecue",
+      "price": "Oak-fired barbecue: ₩50,000",
+      "note": "Advance reservation required (on-site payment or bank transfer)"
+    },
+    "cancellation": {
+      "title": "Cancellation & Refund Policy",
+      "items": [
+        "15+ days before stay: 100% refund",
+        "14 days before stay: 90% refund",
+        "13–8 days before stay: 50% refund",
+        "7 days or less / No-show: No refund",
+        "Cancellation/refund fees may apply"
+      ]
+    },
+    "notes": {
+      "title": "Important Notes",
+      "items": [
+        "No exceeding max capacity or unregistered visitors",
+        "No pets allowed",
+        "Minors must be accompanied by a guardian",
+        "No personal heating devices or fire hazard materials",
+        "CCTV installed on exterior, staff on-site"
+      ]
+    }
+  },
   "gallery": {
     "label": "Gallery",
     "title": "Scenes of Cheongpyeonghada",

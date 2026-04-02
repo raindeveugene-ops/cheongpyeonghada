@@ -3,6 +3,7 @@ import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Features from "@/components/Features";
+import AccommodationInfo from "@/components/AccommodationInfo";
 import Gallery from "@/components/Gallery";
 import Reservation from "@/components/Reservation";
 import Location from "@/components/Location";
@@ -28,6 +29,8 @@ export default async function Home({
         <About t={t} />
         <Divider />
         <Features t={t} />
+        <Divider />
+        <AccommodationInfo t={t} />
         <Divider />
         <Gallery t={t} />
         <Divider />
