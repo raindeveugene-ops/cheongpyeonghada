@@ -21,16 +21,19 @@ export default function Location({ t }: { t: Translations }) {
 
         <FadeIn>
           <div className="mt-12 grid gap-8 lg:grid-cols-3">
-            {/* Map placeholder */}
+            {/* Google Maps Embed */}
             <div className="overflow-hidden rounded-2xl lg:col-span-2">
-              <div className="flex aspect-[16/9] items-center justify-center bg-gradient-to-br from-sage/10 to-beige">
-                <div className="text-center">
-                  <p className="text-4xl">📍</p>
-                  <p className="mt-2 text-sm text-charcoal/50">
-                    {t.location.mapPlaceholder}
-                  </p>
-                </div>
-              </div>
+              <iframe
+                src="https://maps.google.com/maps?q=%EA%B2%BD%EA%B8%B0+%EA%B0%80%ED%8F%89%EA%B5%B0+%EC%B2%AD%ED%8F%89%EB%A9%B4+%EC%82%BC%ED%9A%8C%EB%A6%AC+82-1&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0, aspectRatio: "16/9" }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="청평하다 위치"
+                className="aspect-[16/9] w-full"
+              />
             </div>
 
             {/* Directions */}
