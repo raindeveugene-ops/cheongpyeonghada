@@ -10,14 +10,15 @@ import Location from "@/components/Location";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
 import Divider from "@/components/Divider";
+import { SITE_URL } from "@/lib/site";
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LodgingBusiness",
   name: "청평하다",
   description: "가평 청평 북한강변 600평 독채 펜션",
-  url: "https://xn--2j1bz20c95evtb.kr",
-  image: "https://xn--2j1bz20c95evtb.kr/images/exterior.jpg",
+  url: SITE_URL,
+  image: `${SITE_URL}/images/exterior.jpg`,
   address: {
     "@type": "PostalAddress",
     streetAddress: "삼회리 82-1",

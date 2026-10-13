@@ -13,8 +13,8 @@ interface ReservationBody {
 }
 
 const ALLOWED_ORIGINS = [
-  "https://청평하다.kr",
-  "https://xn--9t4b11yi5bt7l0yf.kr",
+  "https://www.xn--2j1bz20c95evtb.kr",
+  "https://xn--2j1bz20c95evtb.kr",
   "http://localhost:3000",
 ];
 
@@ -28,6 +28,9 @@ function corsHeaders(origin: string | null): Record<string, string> {
 }
 
 const PHONE_REGEX = /^01[016789]\d{7,8}$/;
+const DATE_REGEX = /^\d{4}-\d{2}-\d{2}$/;
+const MAX_NAME_LENGTH = 50;
+const MAX_MESSAGE_LENGTH = 1000;
 
 export const onRequestOptions: PagesFunction<Env> = async (context) => {
   const origin = context.request.headers.get("Origin");
@@ -60,6 +63,23 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   if (!name || !phone || !checkIn || !checkOut || !guests) {
     return new Response(
       JSON.stringify({ error: "Missing required fields" }),
+      { status: 400, headers },
+    );
+  }
+
+  // Validate field types and lengths (Discord rejects embed fields over 1024 chars)
+  if (
+    typeof name !== "string" ||
+    typeof phone !== "string" ||
+    name.trim().length > MAX_NAME_LENGTH ||
+    (message != null &&
+      (typeof message !== "string" || message.length > MAX_MESSAGE_LENGTH)) ||
+    !DATE_REGEX.test(checkIn) ||
+    !DATE_REGEX.test(checkOut) ||
+    !Number.isInteger(guests)
+  ) {
+    return new Response(
+      JSON.stringify({ error: "Invalid field values" }),
       { status: 400, headers },
     );
   }
