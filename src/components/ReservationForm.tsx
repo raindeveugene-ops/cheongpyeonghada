@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import type { Translations } from "@/i18n";
+import { INSTAGRAM_DM_URL } from "@/lib/site";
 
 const PHONE_REGEX = /^01[016789]-?\d{3,4}-?\d{4}$/;
 
@@ -25,7 +26,9 @@ export default function ReservationForm({ t }: { t: Translations }) {
 
   const [phoneError, setPhoneError] = useState("");
   const [dateError, setDateError] = useState("");
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const [dmText, setDmText] = useState("");
+  const [copied, setCopied] = useState(false);
 
   const today = new Date().toISOString().split("T")[0];
 
@@ -44,42 +47,46 @@ export default function ReservationForm({ t }: { t: Translations }) {
     return true;
   }
 
-  async function handleSubmit(e: FormEvent) {
+  function buildDmText(): string {
+    return [
+      f.dmTitle,
+      `${f.dmName}: ${name.trim()}`,
+      `${f.dmPhone}: ${phone}`,
+      `${f.dmDates}: ${checkIn} ~ ${checkOut}`,
+      `${f.dmGuests}: ${guests}${f.guestsUnit}`,
+      `${f.dmBbq}: ${bbq ? f.dmYes : f.dmNo}`,
+      `${f.dmMessage}: ${message.trim() || f.dmNo}`,
+    ].join("\n");
+  }
+
+  async function copyText(text: string): Promise<boolean> {
+    try {
+      await navigator.clipboard.writeText(text);
+      return true;
+    } catch {
+      return false;
+    }
+  }
+
+  function handleSubmit(e: FormEvent) {
     e.preventDefault();
 
     const phoneValid = validatePhone(phone);
     const datesValid = validateDates();
     if (!phoneValid || !datesValid) return;
 
-    setStatus("loading");
+    const text = buildDmText();
+    setDmText(text);
+    // Open the DM window synchronously so popup blockers allow it
+    window.open(INSTAGRAM_DM_URL, "_blank", "noopener");
+    copyText(text).then((ok) => {
+      setCopied(ok);
+      setStatus(ok ? "success" : "error");
+    });
+  }
 
-    try {
-      const res = await fetch("/api/reservation", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name,
-          phone,
-          checkIn,
-          checkOut,
-          guests: Number(guests),
-          bbq,
-          message,
-        }),
-      });
-
-      if (!res.ok) throw new Error();
-      setStatus("success");
-      setName("");
-      setPhone("");
-      setCheckIn("");
-      setCheckOut("");
-      setGuests("2");
-      setBbq(false);
-      setMessage("");
-    } catch {
-      setStatus("error");
-    }
+  async function handleCopyAgain() {
+    setCopied(await copyText(dmText));
   }
 
   const inputClass =
@@ -227,22 +234,42 @@ export default function ReservationForm({ t }: { t: Translations }) {
       {/* Submit */}
       <button
         type="submit"
-        disabled={status === "loading"}
         className="w-full rounded-lg bg-sage py-3.5 text-sm font-semibold text-white transition-colors hover:bg-sage-dark focus:outline-none focus:ring-2 focus:ring-sage/40 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60"
       >
-        {status === "loading" ? f.submitting : f.submit}
+        {f.submit}
       </button>
 
-      {/* Status messages */}
-      {status === "success" && (
-        <p className="rounded-lg bg-sage/10 p-4 text-center text-sm text-sage-dark">
-          {f.success}
-        </p>
-      )}
-      {status === "error" && (
-        <p className="rounded-lg bg-red-50 p-4 text-center text-sm text-red-600">
-          {f.error}
-        </p>
+      {/* DM handoff */}
+      {status !== "idle" && (
+        <div
+          className={`space-y-3 rounded-lg p-4 text-center text-sm ${
+            status === "success"
+              ? "bg-sage/10 text-sage-dark"
+              : "bg-red-50 text-red-600"
+          }`}
+        >
+          <p>{status === "success" ? f.success : f.error}</p>
+          <pre className="whitespace-pre-wrap rounded-md bg-white p-3 text-left font-sans text-charcoal/80 select-all">
+            {dmText}
+          </pre>
+          <div className="flex flex-wrap justify-center gap-2">
+            <button
+              type="button"
+              onClick={handleCopyAgain}
+              className="rounded-lg border border-sage px-4 py-2 font-semibold text-sage-dark transition-colors hover:bg-sage/10"
+            >
+              {copied ? f.copied : f.copyAgain}
+            </button>
+            <a
+              href={INSTAGRAM_DM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-lg bg-sage px-4 py-2 font-semibold text-white transition-colors hover:bg-sage-dark"
+            >
+              {f.openDm}
+            </a>
+          </div>
+        </div>
       )}
     </form>
   );
