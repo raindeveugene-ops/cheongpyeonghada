@@ -43,8 +43,8 @@ function buildJsonLd(locale: Locale, t: Translations) {
         },
         geo: {
           "@type": "GeoCoordinates",
-          latitude: 37.723,
-          longitude: 127.457,
+          latitude: 37.7122085,
+          longitude: 127.4011917,
         },
         hasMap: "https://map.kakao.com/?q=경기 가평군 청평면 북한강로 2209",
         areaServed: ko ? ["청평", "가평"] : ["Cheongpyeong", "Gapyeong"],
