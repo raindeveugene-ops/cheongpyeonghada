@@ -1,8 +1,8 @@
 {
   "meta": {
-    "title": "Cheongpyeonghada | Private Whole-House Pension in Gapyeong, Korea",
-    "description": "Premium private pension along the Bukhan River in Gapyeong. 2,000㎡ grounds, river view, wood-fired BBQ. Up to 6 guests. Your exclusive healing retreat.",
-    "keywords": "Gapyeong pension, private pension Korea, Bukhan River view, Korea villa rental, Cheongpyeonghada, Gapyeong stay"
+    "title": "Cheongpyeonghada | Private Pension in Cheongpyeong, Gapyeong",
+    "description": "Private whole-house pension on the Bukhan River in Cheongpyeong, Gapyeong. 10 min from Cheongpyeong Station, 50 min from Seoul. 2,000㎡ lawn, river view, wood-fired BBQ, up to 6 guests.",
+    "keywords": "Cheongpyeong pension, Cheongpyeong stay, Cheongpyeong accommodation, Gapyeong pension, private pension Korea, Bukhan River view, Cheongpyeonghada, Gapyeong stay"
   },
   "nav": {
     "about": "About",
@@ -14,7 +14,7 @@
     "title": "Tranquility on 2,000㎡ along the Bukhan River",
     "subtitle": "An exclusive private retreat in Cheongpyeong, Gapyeong",
     "cta": "Inquire & Reserve",
-    "imageAlt": "Exterior view of Cheongpyeonghada with mountain backdrop"
+    "imageAlt": "Exterior of Cheongpyeonghada, a private riverside pension in Cheongpyeong, Gapyeong"
   },
   "about": {
     "label": "About",
@@ -178,6 +178,48 @@
     "brand": "Cheongpyeonghada",
     "address": "2209 Bukhangang-ro, Cheongpyeong-myeon, Gapyeong-gun, Gyeonggi-do",
     "copyright": "© 2026 Cheongpyeonghada. All rights reserved."
+  },
+  "faq": {
+    "label": "FAQ",
+    "title": "Frequently Asked Questions",
+    "items": [
+      {
+        "q": "Where is Cheongpyeonghada?",
+        "a": "It is a private riverside pension at 2209 Bukhangang-ro, Cheongpyeong-myeon, Gapyeong-gun, Gyeonggi-do, Korea. It is about 50 minutes by car from Seoul (Cheongpyeong IC) and about 10 minutes by taxi from Cheongpyeong Station on the Gyeongchun Line."
+      },
+      {
+        "q": "Is it a private whole-house rental in Cheongpyeong?",
+        "a": "Yes. There is only one two-level house (about 165㎡ indoors) on roughly 2,000㎡ of grounds, so a single booking has the lawn and the Bukhan River view to itself."
+      },
+      {
+        "q": "What are the check-in and check-out times?",
+        "a": "Check-in is at 3:00 PM and check-out is at 11:00 AM. Please complete check-in before 8:00 PM."
+      },
+      {
+        "q": "How many guests can stay?",
+        "a": "The base rate covers 2 guests, with a maximum of 6. Each extra guest is ₩30,000 (free under 12 months), and an extra bedding set for two is ₩20,000."
+      },
+      {
+        "q": "Can we have a barbecue?",
+        "a": "Yes. The host grills a wood-fired oak barbecue for you for ₩50,000. Advance booking is required."
+      },
+      {
+        "q": "Are pets allowed?",
+        "a": "Sorry, pets are not allowed."
+      },
+      {
+        "q": "Is parking available?",
+        "a": "Yes, parking is free."
+      },
+      {
+        "q": "How do I make a reservation?",
+        "a": "Fill out the inquiry form on this site. Your details are copied and an Instagram DM to @cheongpyung_hada opens, so you can paste and send them. We will get back to you after checking."
+      },
+      {
+        "q": "What is the cancellation policy?",
+        "a": "Cancellations 15+ days before the stay get a 100% refund, 14 days before 90%, and 13 to 8 days before 50%. No refund from 7 days before through the day of stay, or for no-shows."
+      }
+    ]
   },
   "backToTop": "Back to top"
 }
