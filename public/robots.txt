@@ -1,3 +1,18 @@
 User-agent: *
 Allow: /
+
+# 검색엔진 및 AI 답변 엔진 크롤러 명시적 허용
+User-agent: Googlebot
+User-agent: Yeti
+User-agent: Daumoa
+User-agent: Bingbot
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: PerplexityBot
+User-agent: Google-Extended
+Allow: /
+
 Sitemap: https://www.xn--2j1bz20c95evtb.kr/sitemap.xml

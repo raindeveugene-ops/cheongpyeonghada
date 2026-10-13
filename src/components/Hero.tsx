@@ -33,12 +33,14 @@ export default function Hero({ t }: { t: Translations }) {
       <div className="absolute inset-0 bg-black/40" />
 
       <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
-        <h1 className="font-serif text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
-          {t.hero.title}
+        <h1>
+          <span className="block font-serif text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
+            {t.hero.title}
+          </span>
+          <span className="mt-6 block text-lg text-white/80 sm:text-xl">
+            {t.hero.subtitle}
+          </span>
         </h1>
-        <p className="mt-6 text-lg text-white/80 sm:text-xl">
-          {t.hero.subtitle}
-        </p>
         <a
           href="#reservation"
           className="mt-10 inline-block rounded-full bg-gold px-8 py-4 text-sm font-semibold tracking-wide text-white transition-colors hover:bg-gold-light"
