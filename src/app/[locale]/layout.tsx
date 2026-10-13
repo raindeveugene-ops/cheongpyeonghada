@@ -1,8 +1,7 @@
 import "../globals.css";
 import type { Metadata } from "next";
 import { locales, getTranslations, type Locale } from "@/i18n";
-
-const DOMAIN = "https://xn--2j1bz20c95evtb.kr";
+import { SITE_URL as DOMAIN } from "@/lib/site";
 
 export async function generateMetadata({
   params,

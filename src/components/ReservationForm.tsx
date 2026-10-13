@@ -103,6 +103,7 @@ export default function ReservationForm({ t }: { t: Translations }) {
             id="res-name"
             type="text"
             required
+            maxLength={50}
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder={f.namePlaceholder}
@@ -215,6 +216,7 @@ export default function ReservationForm({ t }: { t: Translations }) {
         <textarea
           id="res-message"
           rows={3}
+          maxLength={1000}
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           placeholder={f.messagePlaceholder}
