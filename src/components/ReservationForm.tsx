@@ -100,7 +100,7 @@ export default function ReservationForm({ t }: { t: Translations }) {
       <h3 className="text-lg font-bold text-charcoal text-center">
         {f.heading}
       </h3>
-      <p className="-mt-2 text-center text-sm font-medium text-gold">
+      <p className="-mt-2 text-center text-sm font-medium break-keep text-gold">
         {f.discountNote}
       </p>
 
@@ -244,7 +244,7 @@ export default function ReservationForm({ t }: { t: Translations }) {
       </button>
 
       {/* Booking without Instagram */}
-      <p className="text-center text-sm text-charcoal/60">
+      <p className="text-center text-sm break-keep text-charcoal/60">
         {f.noInstagram}{" "}
         <a
           href={YEOGI_URL}
