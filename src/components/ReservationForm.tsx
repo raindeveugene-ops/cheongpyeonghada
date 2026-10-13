@@ -2,7 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import type { Translations } from "@/i18n";
-import { INSTAGRAM_DM_URL } from "@/lib/site";
+import { INSTAGRAM_DM_URL, YEOGI_URL } from "@/lib/site";
 
 const PHONE_REGEX = /^01[016789]-?\d{3,4}-?\d{4}$/;
 
@@ -50,6 +50,7 @@ export default function ReservationForm({ t }: { t: Translations }) {
   function buildDmText(): string {
     return [
       f.dmTitle,
+      f.dmCode,
       `${f.dmName}: ${name.trim()}`,
       `${f.dmPhone}: ${phone}`,
       `${f.dmDates}: ${checkIn} ~ ${checkOut}`,
@@ -99,6 +100,9 @@ export default function ReservationForm({ t }: { t: Translations }) {
       <h3 className="text-lg font-bold text-charcoal text-center">
         {f.heading}
       </h3>
+      <p className="-mt-2 text-center text-sm font-medium break-keep text-gold">
+        {f.discountNote}
+      </p>
 
       {/* Name & Phone */}
       <div className="grid gap-5 sm:grid-cols-2">
@@ -238,6 +242,19 @@ export default function ReservationForm({ t }: { t: Translations }) {
       >
         {f.submit}
       </button>
+
+      {/* Booking without Instagram */}
+      <p className="text-center text-sm break-keep text-charcoal/60">
+        {f.noInstagram}{" "}
+        <a
+          href={YEOGI_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-semibold text-sage-dark underline underline-offset-4 hover:text-sage"
+        >
+          {f.yeogiCta}
+        </a>
+      </p>
 
       {/* DM handoff */}
       {status !== "idle" && (
