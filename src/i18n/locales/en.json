@@ -139,10 +139,21 @@
       "bbq": "Add BBQ (₩50,000)",
       "message": "Message",
       "messagePlaceholder": "Any special requests or questions",
-      "submit": "Submit Inquiry",
-      "submitting": "Submitting...",
-      "success": "Your reservation inquiry has been submitted. We will contact you shortly.",
-      "error": "Submission failed. Please try again later."
+      "submit": "Inquire via Instagram DM",
+      "success": "Your inquiry has been copied. Paste it into the Instagram DM window that opened and send it.",
+      "error": "Automatic copy didn't work. Please copy the text below and send it via DM.",
+      "copyAgain": "Copy again",
+      "copied": "Copied",
+      "openDm": "Open Instagram DM",
+      "dmTitle": "[Cheongpyeonghada Reservation Inquiry]",
+      "dmName": "Name",
+      "dmPhone": "Phone",
+      "dmDates": "Dates",
+      "dmGuests": "Guests",
+      "dmBbq": "BBQ",
+      "dmMessage": "Message",
+      "dmYes": "Yes",
+      "dmNo": "No"
     }
   },
   "location": {
