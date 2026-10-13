@@ -11,7 +11,7 @@ import Faq from "@/components/Faq";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
 import Divider from "@/components/Divider";
-import { INSTAGRAM_URL, SITE_URL } from "@/lib/site";
+import { INSTAGRAM_URL, SITE_URL, YEOGI_URL } from "@/lib/site";
 
 function buildJsonLd(locale: Locale, t: Translations) {
   const ko = locale === "ko";
@@ -33,7 +33,7 @@ function buildJsonLd(locale: Locale, t: Translations) {
           `${SITE_URL}/images/living-fireplace.jpg`,
           `${SITE_URL}/images/garden-sunset.jpg`,
         ],
-        sameAs: [INSTAGRAM_URL],
+        sameAs: [INSTAGRAM_URL, YEOGI_URL],
         address: {
           "@type": "PostalAddress",
           streetAddress: ko ? "북한강로 2209" : "2209 Bukhangang-ro",
