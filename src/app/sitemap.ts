@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { locales } from "@/i18n";
 import { SITE_IMAGES, SITE_URL } from "@/lib/site";
+import { guides } from "@/content/guides";
 
 export const dynamic = "force-static";
 
@@ -12,7 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "x-default": `${SITE_URL}/ko/`,
   };
 
-  return locales.map((locale) => ({
+  const home: MetadataRoute.Sitemap = locales.map((locale) => ({
     url: `${SITE_URL}/${locale}/`,
     lastModified,
     changeFrequency: "weekly",
@@ -20,4 +21,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     alternates: { languages },
     images: SITE_IMAGES,
   }));
+
+  const guidePages: MetadataRoute.Sitemap = guides.map((g) => ({
+    url: `${SITE_URL}/ko/guide/${g.slug}/`,
+    lastModified: new Date(g.updated),
+    changeFrequency: "monthly",
+    priority: 0.7,
+    images: [`${SITE_URL}/images/${g.image}`],
+  }));
+
+  return [...home, ...guidePages];
 }

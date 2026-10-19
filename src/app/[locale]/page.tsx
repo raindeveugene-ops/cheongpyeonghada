@@ -11,6 +11,7 @@ import Faq from "@/components/Faq";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
 import Divider from "@/components/Divider";
+import GuideLinks from "@/components/GuideLinks";
 import {
   INSTAGRAM_DM_URL,
   INSTAGRAM_URL,
@@ -194,6 +195,7 @@ export default async function Home({
         <Location t={t} />
         <Divider />
         <Faq t={t} />
+        {locale === "ko" && <GuideLinks />}
       </main>
       <Footer t={t} />
       <BackToTop label={t.backToTop} />

@@ -1,21 +1,8 @@
 import "../globals.css";
 import type { Metadata } from "next";
 import { locales, getTranslations, type Locale } from "@/i18n";
-import {
-  BING_SITE_VERIFICATION,
-  GOOGLE_SITE_VERIFICATION,
-  NAVER_SITE_VERIFICATION,
-  SITE_URL as DOMAIN,
-} from "@/lib/site";
-
-// 비어 있는 확인 코드는 meta 태그를 만들지 않음
-const verificationOther: Record<string, string> = {};
-if (NAVER_SITE_VERIFICATION) {
-  verificationOther["naver-site-verification"] = NAVER_SITE_VERIFICATION;
-}
-if (BING_SITE_VERIFICATION) {
-  verificationOther["msvalidate.01"] = BING_SITE_VERIFICATION;
-}
+import { SITE_URL as DOMAIN } from "@/lib/site";
+import { robots, verification } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -31,22 +18,8 @@ export async function generateMetadata({
     title: t.meta.title,
     description: t.meta.description,
     keywords: t.meta.keywords,
-    // AI 개요·검색 결과에 긴 스니펫과 큰 이미지 미리보기를 허용
-    robots: {
-      index: true,
-      follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        "max-snippet": -1,
-        "max-image-preview": "large",
-        "max-video-preview": -1,
-      },
-    },
-    verification: {
-      google: GOOGLE_SITE_VERIFICATION || undefined,
-      other: verificationOther,
-    },
+    robots,
+    verification,
     alternates: {
       canonical: url,
       languages: {
