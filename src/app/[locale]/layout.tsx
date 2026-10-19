@@ -2,6 +2,7 @@ import "../globals.css";
 import type { Metadata } from "next";
 import { locales, getTranslations, type Locale } from "@/i18n";
 import { SITE_URL as DOMAIN } from "@/lib/site";
+import { robots, verification } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -17,6 +18,8 @@ export async function generateMetadata({
     title: t.meta.title,
     description: t.meta.description,
     keywords: t.meta.keywords,
+    robots,
+    verification,
     alternates: {
       canonical: url,
       languages: {

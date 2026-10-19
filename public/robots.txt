@@ -13,6 +13,12 @@ User-agent: ClaudeBot
 User-agent: Claude-SearchBot
 User-agent: PerplexityBot
 User-agent: Google-Extended
+User-agent: Applebot
+User-agent: Applebot-Extended
+User-agent: Perplexity-User
+User-agent: Claude-User
+User-agent: DuckAssistBot
+User-agent: Meta-ExternalAgent
 Allow: /
 
 Sitemap: https://www.xn--2j1bz20c95evtb.kr/sitemap.xml
