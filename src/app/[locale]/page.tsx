@@ -11,12 +11,28 @@ import Faq from "@/components/Faq";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
 import Divider from "@/components/Divider";
-import { INSTAGRAM_URL, SITE_URL, YEOGI_URL } from "@/lib/site";
+import {
+  INSTAGRAM_DM_URL,
+  INSTAGRAM_URL,
+  SITE_IMAGES,
+  SITE_URL,
+  YEOGI_URL,
+} from "@/lib/site";
+
+const ADDRESS_KO = "경기 가평군 청평면 북한강로 2209";
 
 function buildJsonLd(locale: Locale, t: Translations) {
   const ko = locale === "ko";
   const pageUrl = `${SITE_URL}/${locale}/`;
   const businessId = `${SITE_URL}/#lodging`;
+
+  const pageId = `${pageUrl}#webpage`;
+  const houseId = `${SITE_URL}/#house`;
+  const inLanguage = ko ? "ko-KR" : "en";
+  // "📶 무선인터넷" → "무선인터넷"
+  const amenities = t.accommodation.amenities.items.map((item) =>
+    item.replace(/^\S+\s+/, ""),
+  );
 
   return {
     "@context": "https://schema.org",
@@ -25,14 +41,12 @@ function buildJsonLd(locale: Locale, t: Translations) {
         "@type": "LodgingBusiness",
         "@id": businessId,
         name: "청평하다",
-        alternateName: ["청평하다 펜션", "Cheongpyeonghada"],
+        alternateName: ["청평하다 펜션", "청평하다 독채", "Cheongpyeonghada"],
         description: t.meta.description,
+        slogan: t.hero.subtitle,
         url: SITE_URL,
-        image: [
-          `${SITE_URL}/images/exterior.jpg`,
-          `${SITE_URL}/images/living-fireplace.jpg`,
-          `${SITE_URL}/images/garden-sunset.jpg`,
-        ],
+        logo: `${SITE_URL}/images/exterior.jpg`,
+        image: SITE_IMAGES,
         sameAs: [INSTAGRAM_URL, YEOGI_URL],
         address: {
           "@type": "PostalAddress",
@@ -46,24 +60,68 @@ function buildJsonLd(locale: Locale, t: Translations) {
           latitude: 37.7122085,
           longitude: 127.4011917,
         },
-        hasMap: "https://map.kakao.com/?q=경기 가평군 청평면 북한강로 2209",
+        hasMap: [
+          `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ADDRESS_KO)}`,
+          `https://map.kakao.com/?q=${encodeURIComponent(ADDRESS_KO)}`,
+        ],
         areaServed: ko ? ["청평", "가평"] : ["Cheongpyeong", "Gapyeong"],
+        knowsLanguage: ["ko"],
         checkinTime: "15:00",
         checkoutTime: "11:00",
         numberOfRooms: 1,
         petsAllowed: false,
-        amenityFeature: [
-          "무료 와이파이",
-          "무료 주차",
-          "바비큐",
-          "욕조",
-          "객실 내 취사",
-          "에어컨",
-        ].map((name) => ({
+        smokingAllowed: false,
+        amenityFeature: [...amenities, ko ? "바비큐" : "BBQ"].map((name) => ({
           "@type": "LocationFeatureSpecification",
           name,
           value: true,
         })),
+        containsPlace: { "@id": houseId },
+        makesOffer: {
+          "@type": "Offer",
+          name: ko ? "참나무 장작 바비큐" : "Oak-wood BBQ",
+          description: t.reservation.bbqDescription,
+          price: 50000,
+          priceCurrency: "KRW",
+        },
+        potentialAction: [
+          {
+            "@type": "ReserveAction",
+            name: ko ? "인스타그램 DM 예약 문의" : "Book via Instagram DM",
+            target: INSTAGRAM_DM_URL,
+          },
+          {
+            "@type": "ReserveAction",
+            name: ko ? "여기어때에서 예약" : "Book on Yeogi",
+            target: YEOGI_URL,
+          },
+        ],
+      },
+      {
+        "@type": "House",
+        "@id": houseId,
+        name: ko ? "청평하다 복층 독채" : "Cheongpyeonghada private duplex house",
+        description: t.about.description,
+        containedInPlace: { "@id": businessId },
+        floorSize: {
+          "@type": "QuantitativeValue",
+          value: 165,
+          unitCode: "MTK",
+        },
+        numberOfRooms: 1,
+        numberOfBedrooms: 1,
+        occupancy: {
+          "@type": "QuantitativeValue",
+          minValue: 1,
+          maxValue: 6,
+        },
+        bed: {
+          "@type": "BedDetails",
+          numberOfBeds: 2,
+          typeOfBed: ko ? "킹베드" : "King bed",
+        },
+        petsAllowed: false,
+        smokingAllowed: false,
       },
       {
         "@type": "WebSite",
@@ -74,10 +132,23 @@ function buildJsonLd(locale: Locale, t: Translations) {
         publisher: { "@id": businessId },
       },
       {
+        "@type": "WebPage",
+        "@id": pageId,
+        url: pageUrl,
+        name: t.meta.title,
+        description: t.meta.description,
+        inLanguage,
+        isPartOf: { "@id": `${SITE_URL}/#website` },
+        about: { "@id": businessId },
+        mainEntity: { "@id": businessId },
+        primaryImageOfPage: `${SITE_URL}/images/exterior.jpg`,
+      },
+      {
         "@type": "FAQPage",
         "@id": `${pageUrl}#faq`,
         url: pageUrl,
-        inLanguage: ko ? "ko-KR" : "en",
+        inLanguage,
+        isPartOf: { "@id": pageId },
         about: { "@id": businessId },
         mainEntity: t.faq.items.map((item) => ({
           "@type": "Question",
